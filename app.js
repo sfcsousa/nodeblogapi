@@ -5,7 +5,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var folderWatch = require('./watchers/folderWatch');
 
 var app = express();
 
@@ -15,8 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(folderWatch);
-
 app.use('/', indexRouter);
+
+var folderWatch = require('./watchers/folderWatch')();
 
 module.exports = app;

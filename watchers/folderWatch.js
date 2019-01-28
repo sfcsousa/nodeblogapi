@@ -1,15 +1,13 @@
 
-var chokidar = require('chokidar');
+var fileEx = require('file-system');
 var config = require('../setup/config');
+var jsonReader = require('./jsonReader');
 
-var folderWatcher = chokidar.watch(config.dataInput.directory,
-    {
-        ignored: /(^|[\/\\])\../,
-        persistent: true
+var folderWatcher = fileEx.recurse(config.dataInput.directory,
+    ['*.csv', '*.json'],
+    (filepath, relative, filename) => {
+        if (filename.indexOf('.json') > 0) return jsonReader(filepath);
+        else if (filename.indexOf('.csv') > 0) return 's';
     });
 
-folderWatcher.on('add', (path, stats) => {
-    console.log(path, stats);
-});
-
-module.exports = folderWatcher;
+module.exports = () => folderWatcher;

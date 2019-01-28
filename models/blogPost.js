@@ -5,6 +5,7 @@ const emailRegEx = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-
 
 const blogPostSchema = new Schema({
     id: ObjectId,
+    controllerId: String,
     title: String,
     postContent: String,
     author: {

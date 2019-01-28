@@ -1,10 +1,14 @@
+
 module.exports = {
     dataInput: {
-        directory: "./data_input",
+        directory: "../TESTE_ Folder",
     },
-    database: {
+    connection: {
         username: '',
-        port: '',
         password: '',
+        port: '27017',
+        host: 'localhost',
+        database: 'blogPosts',
+
     }
 }
