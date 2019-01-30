@@ -1,6 +1,7 @@
 var conn = require('../factories/connectionFactory');
 var blogModel = require('../models/blogPost');
 var postConverter = require('../converter/blogConverter');
+
 var saveNewPost = function (post) {
     var db = conn();
     var Blog = blogModel(db);

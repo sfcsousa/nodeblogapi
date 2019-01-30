@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "csvjson": "^5.1.0",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "file-system": "^2.2.2",
