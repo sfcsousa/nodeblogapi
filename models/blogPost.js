@@ -1,11 +1,12 @@
-var mongoose = require('mongoose');
+"use strict";
+let mongoose = require('mongoose');
+let mongoosePaginate = require('mongoose-paginate-v2');
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.ObjectId;
 const emailRegEx = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const blogPostSchema = new Schema({
     id: ObjectId,
-    controllerId: String,
     title: String,
     postContent: String,
     author: {
@@ -25,9 +26,11 @@ const blogPostSchema = new Schema({
     movieTitle: String,
     comments: Array
 });
+blogPostSchema.plugin(mongoosePaginate);
 
-var blogPostModel = (db) => {
+let blogPostModel = (db) => {
     let model = db.model('Blog', blogPostSchema);
+
     return model;
 };
 
