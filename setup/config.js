@@ -1,7 +1,7 @@
 
 module.exports = {
     dataInput: {
-        directory: "../TESTE_ Folder",
+        directory: "./data_input",
     },
     connection: {
         username: '',
