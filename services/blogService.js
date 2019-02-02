@@ -1,5 +1,7 @@
 "use strict";
 let blogRepository = require('../repository/blogPostRepository');
+let omdbService = require('./omdbServices');
+let titleNormalizer = require('../converter/titleConverter');
 
 let getAllPosts = async (req, res, next) => {
     let page = '';
@@ -20,8 +22,11 @@ let getPostById = async (req, res, next) => {
         id = req.params.blog_id;
     else
         next(new Error("Informe um id para buscar"));
-    let result = await blogRepository.getPostById(id);
-    res.json(result);
+    let post = await blogRepository.getPostById(id);
+    let movie = await omdbService(titleNormalizer(post.movieTitle));
+    res.json({
+        post: post, movie: movie
+    });
     next();
 };
 let createNewPost = async (req, res, next) => {
