@@ -73,7 +73,7 @@ Acesse http://localhost:3000/ e veja os metodos disponíveis.
 ## Versioning
 
 Uso de [SemVer](http://semver.org/) para versionar a aplicação. Vejas as versão disponíveis aqui 
-[versões](https://github.com/your/project/tags). 
+[versões](https://github.com/sfcsousa/nodeblogapi/tags). 
 
 ## Authors
 
