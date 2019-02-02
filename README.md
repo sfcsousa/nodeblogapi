@@ -77,7 +77,7 @@ Uso de [SemVer](http://semver.org/) para versionar a aplicação. Vejas as vers�
 
 ## Authors
 
-* **Pedro Sousa** - *Initial work* - [sfcsousa](https://github.com/sfcsousa)
+* **Pedro Muriel Sousa** - *Initial work* - [SFCSOUSA](https://github.com/sfcsousa)
 
 ## Acknowledgments
 
