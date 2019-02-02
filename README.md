@@ -17,7 +17,7 @@ Faça download do projeto para a sua maquina local, e extraia o zip numa pasta d
 Acesse essa pasta via cmd:
 
 ```
-$ cd blogpostapi
+$ cd nodeblogapi-master
 ```
 
 Instale todas as depêndencias do projeto
