@@ -18,15 +18,57 @@ let getPostById = async (req, res, next) => {
     let id = '';
     if (req.params)
         id = req.params.blog_id;
-
+    else
+        next(new Error("Informe um id para buscar"));
     let result = await blogRepository.getPostById(id);
     res.json(result);
     next();
-
 };
+let createNewPost = async (req, res, next) => {
+    if (!req.body) {
+        next(new Error("Informe um post para atualizar"));
+    }
+    let post = req.body;
+
+    console.log('post ', post);
+
+    let result = await blogRepository.saveNewPost(post);
+    res.json(result);
+    next();
+}
+
+let updatePost = async (req, res, next) => {
+    if (!req.body) {
+        next(new Error("Informe um post para atualizar"));
+    }
+    let post = req.body;
+    let id = req.params.blog_id;
+
+    let result = await blogRepository.updatePost(id, post);
+
+    res.json({ updatedPost: result });
+    next();
+}
+
+let deletePost = async (req, res, next) => {
+    let id = '';
+    if (req.params)
+        id = req.params.blog_id;
+    else
+        next(new Error("Informe um id para excluir"));
+
+
+    let result = await blogRepository.removePost(id);
+
+    res.json({ removedPost: result });
+    next();
+}
 
 
 module.exports = {
     getAllPosts: getAllPosts,
-    getPostById: getPostById
+    getPostById: getPostById,
+    createNewPost: createNewPost,
+    updatePost: updatePost,
+    deletePost: deletePost,
 };

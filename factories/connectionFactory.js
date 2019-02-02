@@ -5,6 +5,7 @@ var connectionHandler = () => {
     console.log('Conectado... ');
 }
 var errorHandler = (err) => {
+    console.warn('Erro ao conectar...');
     throw err;
 }
 
@@ -15,6 +16,7 @@ var connectionFactory = function () {
         useNewUrlParser: true,
         socketTimeoutMS: 45 * 1000,
     });
+
     return conn;
 }
 
