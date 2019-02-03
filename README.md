@@ -64,23 +64,22 @@ $ npm run start
 Acesse http://localhost:3000/ e veja os metodos disponíveis.
 
 
-## Built With
+## Feito com 
 
 * [Express](https://expressjs.com/) - O framework WEB
 * [NPM](https://www.npmjs.com/) - Gerente de Dependências
 * [MONGOOSE](https://mongoosejs.com/) - Plugin para connectar e fazer operações na base de dados
 
-## Versioning
+## Versionamento
 
 Uso de [SemVer](http://semver.org/) para versionar a aplicação. Vejas as versão disponíveis aqui 
 [versões](https://github.com/sfcsousa/nodeblogapi/tags). 
 
-## Authors
+## Autores
 
 * **Pedro Muriel Sousa** - *Initial work* - [SFCSOUSA](https://github.com/sfcsousa)
 
-## Acknowledgments
+## Conquistas
 
 * Interessante a abordagem de DDD nesse projeto;
-* Sempre muito interessante fazer novos projetos;
 
